@@ -38,10 +38,7 @@ function App() {
         <section id='core-concepts'>
           <h2>Core concepts</h2>
           <ul>
-            <CoreComponent {...CORE_CONCEPTS[0]} />
-            <CoreComponent {...CORE_CONCEPTS[1]} />
-            <CoreComponent {...CORE_CONCEPTS[2]} />
-            <CoreComponent {...CORE_CONCEPTS[3]} />
+            {CORE_CONCEPTS.map((conceptItem) => <CoreComponent />)}
           </ul>
         </section>
         <section id='examples'>
@@ -49,10 +46,10 @@ function App() {
             Examples
           </h2>
           <menu>
-            <TabButton onSelet={() => handleSelect('components')}>Components</TabButton>
-            <TabButton onSelet={() => handleSelect('jsx')}>JSX</TabButton>
-            <TabButton onSelet={() => handleSelect('props')}>Props</TabButton>
-            <TabButton onSelet={() => handleSelect('state')}>State</TabButton>
+            <TabButton isSelected={selectedTopic === 'components'} onSelet={() => handleSelect('components')}>Components</TabButton>
+            <TabButton isSelected={selectedTopic === 'jsx'} onSelet={() => handleSelect('jsx')}>JSX</TabButton>
+            <TabButton isSelected={selectedTopic === 'props'} onSelet={() => handleSelect('props')}>Props</TabButton>
+            <TabButton isSelected={selectedTopic === 'state'} onSelet={() => handleSelect('state')}>State</TabButton>
           </menu>
           {/* Approch 1
           {!selectedTopic && (<p>Please select topic</p>)}
