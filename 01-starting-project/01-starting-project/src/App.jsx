@@ -2,7 +2,7 @@ import { CORE_CONCEPTS } from './data.js';
 import Header from './Components/Header/Header.jsx'
 import CoreComponent from './Components/CoreConcept.jsx'
 import TabButton from './Components/TabButton.jsx';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { EXAMPLES } from './data.js'
 
 function App() {
@@ -32,13 +32,13 @@ function App() {
   }
 
   return (
-    <div>
+    <Fragment>
       <Header />
       <main>
         <section id='core-concepts'>
           <h2>Core concepts</h2>
           <ul>
-            {CORE_CONCEPTS.map((conceptItem) => <CoreComponent />)}
+            {CORE_CONCEPTS.map((conceptItem) => <CoreComponent key={conceptItem.title} {...conceptItem}/>)}
           </ul>
         </section>
         <section id='examples'>
@@ -70,7 +70,7 @@ function App() {
 
         </section>
       </main>
-    </div>
+    </Fragment>
   );
 }
 
