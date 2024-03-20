@@ -1,5 +1,5 @@
 import CoreComponent from "./CoreConcept";
-import { CORE_CONCEPTS } from "../data";
+import { CORE_CONCEPTS } from "../data.js";
 
 
 export default function CoreConcepts() {

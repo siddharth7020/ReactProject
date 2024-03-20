@@ -1,4 +1,5 @@
 import './CoreConcept.css';
+import '../data.js';
 
 export default function CoreComponent({image , title , description}) {
     return (
